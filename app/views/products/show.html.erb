@@ -1,0 +1,31 @@
+<div class="row">
+  <!-- 圖片 -->
+  <div class="col-md-6">
+
+    <% if @product.image.present? %>
+      <%= image_tag(@product.image.medium.url, class: "thumbnail")%>
+    <% else %>
+      <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+    <% end %>
+  </div>
+  <!-- 資訊 -->
+  <div class="col-md-6">
+    <h2><%= @product.name %></h2>
+    <div>
+      <p>
+        <%= @product.description %>
+      </p>
+    </div>
+    <div>
+      In Stock：<%= @product.stock %>
+    </div>
+    <div>
+      $：<%= @product.price %>
+    </div>
+    <br/>
+    <!-- 按鈕 -->
+    <div>
+      <%= link_to("加入購物車", "#", :class => "btn btn-danger btn-lg") %>
+    </div>
+  </div>
+</div>
