@@ -6,7 +6,14 @@
   <%= f.input :description %>
   <%= f.input :price %>
   <%= f.input :stock %>
-  <%= f.input :image %>
+
+  <% if @product.image.preset? %>
+    <span>Product Image</span>
+    <br/>
+    <%= image_tag(@product.image.thumb.url) %>
+  <% end %>
+
+  <%= f.input :image, as: :file %>
   <%= f.submit "Submit" %>
 
 <% end %>
