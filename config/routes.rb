@@ -8,5 +8,10 @@ Rails.application.routes.draw do
     resources :products
   end
 
-  resources :products
+  resources :products do
+    member do
+      post :add_to_cart #加入購物車
+    end
+  end
+
 end
